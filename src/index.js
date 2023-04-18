@@ -1,11 +1,16 @@
 const express = require("express");
+const parseQueryParams = require("./parsers/queryParamsParser");
+const handlerFactory = require("./factories/handlerFactory");
 
 const app = express();
 
 app.get("/", (req, res) => {
-  const params = req.query;
-  console.log(params);
-  res.send("Express JS on Vercel");
+  const params = parseQueryParams(req.query);
+  if (params) {
+    const result = handlerFactory(params);
+    return res.send(result);
+  }
+  res.send(undefined);
 });
 
 const port = process.env.PORT || 8080;
