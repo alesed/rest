@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
+  const params = req.query;
+  console.log(params);
   res.send("Express JS on Vercel");
 });
 

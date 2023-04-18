@@ -32,6 +32,10 @@ For the evaluation of the arithmetic expression, you can use any support library
 - `npm` (tested on v9.5.1)
 - `yarn` (tested on v1.22.19)
 
+### Optional
+
+- `nodemon` For automatic server restarts (`npm install -g nodemon`)
+
 ## Installation
 
 1. Clone the repository
