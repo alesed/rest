@@ -4,7 +4,7 @@ const handlerFactory = require("./factories/handlerFactory");
 
 const app = express();
 
-app.get("/", async (req, res) => {
+app.get("/request", async (req, res) => {
   const params = parseQueryParams(req.query);
   if (params) {
     const result = await handlerFactory(params);
