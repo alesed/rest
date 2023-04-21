@@ -6,7 +6,7 @@ module.exports = function handleEval(expression) {
   }
 
   const result = getResult(expression);
-  return JSON.stringify({ result });
+  return JSON.stringify(result);
 };
 
 function getResult(expression) {

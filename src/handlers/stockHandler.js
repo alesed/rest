@@ -12,7 +12,7 @@ module.exports = async function handleStock(identifier) {
   }
 
   const result = await getResult(identifier);
-  return JSON.stringify({ result });
+  return JSON.stringify(result);
 };
 
 async function getResult(identifier) {

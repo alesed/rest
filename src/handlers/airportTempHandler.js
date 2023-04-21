@@ -13,7 +13,7 @@ module.exports = async function handleAirportTemp(iataCode) {
   }
 
   const result = await getResult(iataCode);
-  return JSON.stringify({ result });
+  return JSON.stringify(result);
 };
 
 async function getResult(iataCode) {
