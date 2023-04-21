@@ -5,13 +5,14 @@ module.exports = function handleEval(expression) {
     return undefined;
   }
 
-  return JSON.stringify(getResult(expression));
+  const result = getResult(expression);
+  return JSON.stringify({ result });
 };
 
 function getResult(expression) {
   try {
     const result = eval(expression);
-    return { result };
+    return result;
   } catch (_) {
     return undefined;
   }

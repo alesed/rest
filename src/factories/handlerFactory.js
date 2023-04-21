@@ -2,15 +2,16 @@ const handleAirportTemp = require("../handlers/airportTempHandler");
 const handleStockPrice = require("../handlers/stockHandler");
 const handleEval = require("../handlers/evalHandler");
 
-module.exports = function handlerFactory(queryParams) {
+module.exports = async function handlerFactory(queryParams) {
   const { queryAirportTemp, queryStockPrice, queryEval } = queryParams;
 
   if (queryAirportTemp) {
-    return handleAirportTemp(queryAirportTemp);
+    return await handleAirportTemp(queryAirportTemp);
   } else if (queryStockPrice) {
-    return handleStockPrice(queryStockPrice);
+    return await handleStockPrice(queryStockPrice);
   } else if (queryEval) {
-    return handleEval(queryEval);
+    return await handleEval(queryEval);
+  } else {
+    return undefined;
   }
-  return undefined;
 };

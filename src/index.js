@@ -4,13 +4,14 @@ const handlerFactory = require("./factories/handlerFactory");
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   const params = parseQueryParams(req.query);
   if (params) {
-    const result = handlerFactory(params);
-    return res.send(result);
+    const result = await handlerFactory(params);
+    res.send(result);
+  } else {
+    res.send(undefined);
   }
-  res.send(undefined);
 });
 
 const port = process.env.PORT || 8080;
