@@ -8,6 +8,7 @@ app.get("/", async (req, res) => {
   const params = parseQueryParams(req.query);
   if (params) {
     const result = await handlerFactory(params);
+    res.setHeader("content-type", "application/json");
     res.send(result);
   } else {
     res.send(undefined);

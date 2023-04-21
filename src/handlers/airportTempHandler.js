@@ -23,8 +23,7 @@ async function getResult(iataCode) {
     const temperature = await getTemperature(locationKey);
 
     return temperature;
-  } catch (error) {
-    console.error(error);
+  } catch (_) {
     return undefined;
   }
 }
